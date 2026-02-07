@@ -1,0 +1,124 @@
+[
+    {
+        "id": "r101",
+        "roomNumber": "101",
+        "type": "Double",
+        "floor": 1,
+        "status": "available",
+        "price": 150.00,
+        "maxOccupancy": 2,
+        "features": [
+            "WiFi",
+            "TV",
+            "Mini Bar",
+            "Air Conditioning"
+        ]
+    },
+    {
+        "id": "r102",
+        "roomNumber": "102",
+        "type": "Single",
+        "floor": 1,
+        "status": "available",
+        "price": 100.00,
+        "maxOccupancy": 1,
+        "features": [
+            "WiFi",
+            "TV",
+            "Air Conditioning"
+        ]
+    },
+    {
+        "id": "r103",
+        "roomNumber": "103",
+        "type": "Double",
+        "floor": 1,
+        "status": "occupied",
+        "price": 150.00,
+        "maxOccupancy": 2,
+        "features": [
+            "WiFi",
+            "TV",
+            "Mini Bar",
+            "Air Conditioning"
+        ]
+    },
+    {
+        "id": "r201",
+        "roomNumber": "201",
+        "type": "Suite",
+        "floor": 2,
+        "status": "available",
+        "price": 300.00,
+        "maxOccupancy": 4,
+        "features": [
+            "WiFi",
+            "TV",
+            "Mini Bar",
+            "Jacuzzi",
+            "King Bed",
+            "Living Room"
+        ]
+    },
+    {
+        "id": "r202",
+        "roomNumber": "202",
+        "type": "Double",
+        "floor": 2,
+        "status": "cleaning",
+        "price": 150.00,
+        "maxOccupancy": 2,
+        "features": [
+            "WiFi",
+            "TV",
+            "Mini Bar",
+            "Air Conditioning"
+        ]
+    },
+    {
+        "id": "r203",
+        "roomNumber": "203",
+        "type": "Single",
+        "floor": 2,
+        "status": "available",
+        "price": 100.00,
+        "maxOccupancy": 1,
+        "features": [
+            "WiFi",
+            "TV",
+            "Air Conditioning"
+        ]
+    },
+    {
+        "id": "r301",
+        "roomNumber": "301",
+        "type": "Suite",
+        "floor": 3,
+        "status": "occupied",
+        "price": 300.00,
+        "maxOccupancy": 4,
+        "features": [
+            "WiFi",
+            "TV",
+            "Mini Bar",
+            "Jacuzzi",
+            "King Bed",
+            "Living Room"
+        ]
+    },
+    {
+        "id": "r302",
+        "roomNumber": "302",
+        "type": "Double",
+        "floor": 3,
+        "status": "available",
+        "price": 150.00,
+        "maxOccupancy": 2,
+        "features": [
+            "WiFi",
+            "TV",
+            "Mini Bar",
+            "Air Conditioning"
+        ]
+    }
+]

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Analytics - HotelMaster</title>
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script type="module" async
+        src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fhotelmaste7956back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.16"></script>
+    <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+</head>
+
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-surface border-b border-border sticky top-0 z-navigation shadow-sm">
+        <div class="max-w-[1920px] mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#1E3A5F" />
+                        <path d="M12 28V12H16V20H24V12H28V28H24V24H16V28H12Z" fill="#D4A574" />
+                    </svg>
+                    <div>
+                        <h1 class="text-xl font-heading font-semibold text-primary">HotelMaster</h1>
+                        <p class="text-xs text-text-secondary">Revenue Analytics</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden lg:flex items-center gap-2">
+                    <a href="front_desk_dashboard.html"
+                        class="px-4 py-2 rounded-lg text-text-secondary hover:bg-primary/5 hover:text-primary transition-all duration-250">
+                        Dashboard
+                    </a>
+                    <a href="guest_profile_management.html"
+                        class="px-4 py-2 rounded-lg text-text-secondary hover:bg-primary/5 hover:text-primary transition-all duration-250">
+                        Guests
+                    </a>
+                    <a href="reservation_management.html"
+                        class="px-4 py-2 rounded-lg text-text-secondary hover:bg-primary/5 hover:text-primary transition-all duration-250">
+                        Reservations
+                    </a>
+                    <a href="room_status_management.html"
+                        class="px-4 py-2 rounded-lg text-text-secondary hover:bg-primary/5 hover:text-primary transition-all duration-250">
+                        Rooms
+                    </a>
+                    <a href="point_of_sale_system.html"
+                        class="px-4 py-2 rounded-lg text-text-secondary hover:bg-primary/5 hover:text-primary transition-all duration-250">
+                        POS
+                    </a>
+                    <a href="revenue_analytics.html"
+                        class="px-4 py-2 rounded-lg bg-primary/10 text-primary font-medium transition-all duration-250">
+                        Analytics
+                    </a>
+                </nav>
+
+                <!-- User Profile & Mobile Menu -->
+                <div class="flex items-center gap-4">
+                    <button class="relative p-2 rounded-lg hover:bg-primary/5 transition-all duration-250"
+                        aria-label="Notifications">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_178b2f1b4-1769962063238.png"
+                            alt="Notification bell icon" class="w-6 h-6">
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+                    </button>
+                    <div
+                        class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 cursor-pointer transition-all duration-250">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fffe7a86-1763300194458.png"
+                            alt="Profile photo of revenue manager" class="w-10 h-10 rounded-full object-cover">
+                        <div class="hidden md:block">
+                            <p class="text-sm font-medium text-text-primary">Sarah Johnson</p>
+                            <p class="text-xs text-text-secondary">Revenue Manager</p>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu Toggle -->
+                    <button class="lg:hidden p-2 rounded-lg hover:bg-primary/5 transition-all duration-250"
+                        aria-label="Open menu">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b5957374-1766482728093.png"
+                            alt="Menu icon" class="w-6 h-6">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-[1920px] mx-auto px-6 py-8">
+        <!-- Page Header with Date Range Selector -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8">
+            <div>
+                <h2 class="text-3xl font-heading font-semibold text-text-primary mb-1">Revenue Analytics Dashboard</h2>
+                <p class="text-text-secondary flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f142a6b7-1767729425078.png"
+                        alt="Analytics icon" class="w-5 h-5">
+                    Real-time financial performance insights
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <!-- Date Range Selector -->
+                <div class="flex items-center gap-2 px-4 py-2 bg-surface rounded-lg border border-border">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1546f1010-1769962063289.png"
+                        alt="Calendar range icon" class="w-5 h-5">
+                    <select
+                        class="bg-transparent text-sm text-text-primary font-medium focus:outline-none cursor-pointer">
+                        <option>Last 7 Days</option>
+                        <option>Last 30 Days</option>
+                        <option>Last 90 Days</option>
+                        <option>This Month</option>
+                        <option>Last Month</option>
+                        <option>This Year</option>
+                        <option>Custom Range</option>
+                    </select>
+                </div>
+                <button class="btn btn-outline flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_152f8b5f4-1769455359717.png"
+                        alt="Download icon" class="w-5 h-5">
+                    Export Report
+                </button>
+                <button class="btn btn-primary flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_119111c12-1768273227169.png"
+                        alt="Refresh icon" class="w-5 h-5">
+                    Refresh Data
+                </button>
+            </div>
+        </div>
+
+        <!-- Key Performance Indicators -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- RevPAR Card -->
+            <div class="card hover:shadow-lg">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="p-3 bg-primary/10 rounded-lg">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f1bfa46e-1769962067876.png"
+                            alt="Revenue icon" class="w-8 h-8">
+                    </div>
+                    <span class="badge badge-success">+12.5%</span>
+                </div>
+                <h3 class="text-2xl font-heading font-semibold text-text-primary mb-1">$162.50</h3>
+                <p class="text-sm text-text-secondary mb-2">RevPAR (Revenue per Available Room)</p>
+                <div class="flex items-center gap-2 text-xs text-success">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fc9404eb-1767016302792.png"
+                        alt="Trending up icon" class="w-4 h-4">
+                    <span>vs. last period: $144.44</span>
+                </div>
+            </div>
+
+            <!-- Occupancy Rate Card -->
+            <div class="card hover:shadow-lg">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="p-3 bg-secondary/10 rounded-lg">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_142741fac-1766128875761.png"
+                            alt="Occupancy icon" class="w-8 h-8">
+                    </div>
+                    <span class="badge badge-success">+5.2%</span>
+                </div>
+                <h3 class="text-2xl font-heading font-semibold text-text-primary mb-1">87.5%</h3>
+                <p class="text-sm text-text-secondary mb-2">Average Occupancy Rate</p>
+                <div class="mt-4 progress-bar">
+                    <div class="progress-bar-fill" style="width: 87.5%"></div>
+                </div>
+            </div>
+
+            <!-- ADR Card -->
+            <div class="card hover:shadow-lg">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="p-3 bg-accent/10 rounded-lg">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a8d10e5e-1767410730351.png"
+                            alt="Daily rate icon" class="w-8 h-8">
+                    </div>
+                    <span class="badge badge-success">+8.3%</span>
+                </div>
+                <h3 class="text-2xl font-heading font-semibold text-text-primary mb-1">$185.71</h3>
+                <p class="text-sm text-text-secondary mb-2">Average Daily Rate (ADR)</p>
+                <div class="flex items-center gap-2 text-xs text-success">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fc9404eb-1767016302792.png"
+                        alt="Trending up icon" class="w-4 h-4">
+                    <span>vs. last period: $171.43</span>
+                </div>
+            </div>
+
+            <!-- Total Revenue Card -->
+            <div class="card hover:shadow-lg">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="p-3 bg-success/10 rounded-lg">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1622e9480-1769327435361.png"
+                            alt="Total revenue icon" class="w-8 h-8">
+                    </div>
+                    <span class="badge badge-success">+15.7%</span>
+                </div>
+                <h3 class="text-2xl font-heading font-semibold text-text-primary mb-1">$1,458,320</h3>
+                <p class="text-sm text-text-secondary mb-2">Total Revenue (30 Days)</p>
+                <div class="flex items-center gap-2 text-xs text-success">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fc9404eb-1767016302792.png"
+                        alt="Trending up icon" class="w-4 h-4">
+                    <span>vs. last period: $1,260,450</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Analytics Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Left Column: Charts & Trends -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Revenue Trend Chart -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_101ae863d-1769011877352.png"
+                                alt="Line chart icon" class="w-6 h-6">
+                            Revenue Trend Analysis
+                        </h3>
+                        <div class="flex items-center gap-2">
+                            <button
+                                class="px-3 py-1 text-xs rounded-md bg-primary/10 text-primary font-medium">Daily</button>
+                            <button
+                                class="px-3 py-1 text-xs rounded-md text-text-secondary hover:bg-primary/5 transition-all duration-250">Weekly</button>
+                            <button
+                                class="px-3 py-1 text-xs rounded-md text-text-secondary hover:bg-primary/5 transition-all duration-250">Monthly</button>
+                        </div>
+                    </div>
+                    <!-- Revenue Trend SVG Chart -->
+                    <div class="relative h-80 bg-background rounded-lg p-6" role="img"
+                        aria-label="Revenue trend line chart showing daily revenue over the past 30 days">
+                        <svg class="w-full h-full" viewBox="0 0 800 280" preserveAspectRatio="xMidYMid meet">
+                            <!-- Grid Lines -->
+                            <line x1="0" y1="0" x2="800" y2="0" stroke="#E5E7EB" stroke-width="1" />
+                            <line x1="0" y1="70" x2="800" y2="70" stroke="#E5E7EB" stroke-width="1" />
+                            <line x1="0" y1="140" x2="800" y2="140" stroke="#E5E7EB" stroke-width="1" />
+                            <line x1="0" y1="210" x2="800" y2="210" stroke="#E5E7EB" stroke-width="1" />
+                            <line x1="0" y1="280" x2="800" y2="280" stroke="#E5E7EB" stroke-width="1" />
+
+                            <!-- Revenue Line -->
+                            <polyline fill="none" stroke="#1E3A5F" stroke-width="3"
+                                points="0,180 80,160 160,140 240,120 320,100 400,90 480,110 560,95 640,80 720,70 800,60" />
+
+                            <!-- Data Points -->
+                            <circle cx="0" cy="180" r="4" fill="#1E3A5F" />
+                            <circle cx="80" cy="160" r="4" fill="#1E3A5F" />
+                            <circle cx="160" cy="140" r="4" fill="#1E3A5F" />
+                            <circle cx="240" cy="120" r="4" fill="#1E3A5F" />
+                            <circle cx="320" cy="100" r="4" fill="#1E3A5F" />
+                            <circle cx="400" cy="90" r="4" fill="#1E3A5F" />
+                            <circle cx="480" cy="110" r="4" fill="#1E3A5F" />
+                            <circle cx="560" cy="95" r="4" fill="#1E3A5F" />
+                            <circle cx="640" cy="80" r="4" fill="#1E3A5F" />
+                            <circle cx="720" cy="70" r="4" fill="#1E3A5F" />
+                            <circle cx="800" cy="60" r="4" fill="#1E3A5F" />
+
+                            <!-- Gradient Fill -->
+                            <defs>
+                                <linearGradient id="revenueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1E3A5F;stop-opacity:0.2" />
+                                    <stop offset="100%" style="stop-color:#1E3A5F;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            <polygon fill="url(#revenueGradient)"
+                                points="0,180 80,160 160,140 240,120 320,100 400,90 480,110 560,95 640,80 720,70 800,60 800,280 0,280" />
+                        </svg>
+                        <!-- Y-Axis Labels -->
+                        <div
+                            class="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-text-secondary py-6">
+                            <span>$60k</span>
+                            <span>$45k</span>
+                            <span>$30k</span>
+                            <span>$15k</span>
+                            <span>$0</span>
+                        </div>
+                        <!-- X-Axis Labels -->
+                        <div
+                            class="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-text-secondary px-6 pb-2">
+                            <span>Jan 1</span>
+                            <span>Jan 8</span>
+                            <span>Jan 15</span>
+                            <span>Jan 22</span>
+                            <span>Jan 29</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid grid-cols-3 gap-4">
+                        <div class="text-center p-3 bg-background rounded-lg">
+                            <p class="text-xs text-text-secondary mb-1">Peak Day</p>
+                            <p class="text-lg font-semibold text-text-primary">Jan 29</p>
+                            <p class="text-xs text-success">$58,420</p>
+                        </div>
+                        <div class="text-center p-3 bg-background rounded-lg">
+                            <p class="text-xs text-text-secondary mb-1">Average</p>
+                            <p class="text-lg font-semibold text-text-primary">Daily</p>
+                            <p class="text-xs text-text-primary">$48,610</p>
+                        </div>
+                        <div class="text-center p-3 bg-background rounded-lg">
+                            <p class="text-xs text-text-secondary mb-1">Growth Rate</p>
+                            <p class="text-lg font-semibold text-text-primary">Monthly</p>
+                            <p class="text-xs text-success">+15.7%</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Revenue Breakdown by Source -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1faceb92b-1768162660775.png"
+                                alt="Donut chart icon" class="w-6 h-6">
+                            Revenue Breakdown by Source
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Donut Chart -->
+                        <div class="flex items-center justify-center">
+                            <svg class="w-64 h-64" viewBox="0 0 200 200" role="img"
+                                aria-label="Donut chart showing revenue distribution across different sources">
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="#1E3A5F" stroke-width="40"
+                                    stroke-dasharray="377 377" transform="rotate(-90 100 100)" />
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="#4A90A4" stroke-width="40"
+                                    stroke-dasharray="188.5 377" stroke-dashoffset="-377"
+                                    transform="rotate(-90 100 100)" />
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="#D4A574" stroke-width="40"
+                                    stroke-dasharray="113.1 377" stroke-dashoffset="-565.5"
+                                    transform="rotate(-90 100 100)" />
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="#059669" stroke-width="40"
+                                    stroke-dasharray="75.4 377" stroke-dashoffset="-678.6"
+                                    transform="rotate(-90 100 100)" />
+                                <text x="100" y="95" text-anchor="middle" class="text-2xl font-semibold"
+                                    fill="#1A1A1A">$1.46M</text>
+                                <text x="100" y="115" text-anchor="middle" class="text-xs" fill="#4A5568">Total
+                                    Revenue</text>
+                            </svg>
+                        </div>
+                        <!-- Legend & Breakdown -->
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-background rounded-lg">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 rounded-full bg-primary"></div>
+                                    <div>
+                                        <p class="text-sm font-medium text-text-primary">Room Revenue</p>
+                                        <p class="text-xs text-text-secondary">Direct bookings & OTAs</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-semibold text-text-primary">$730,000</p>
+                                    <p class="text-xs text-text-secondary">50.0%</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-background rounded-lg">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 rounded-full bg-secondary"></div>
+                                    <div>
+                                        <p class="text-sm font-medium text-text-primary">Food & Beverage</p>
+                                        <p class="text-xs text-text-secondary">Restaurant & bar sales</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-semibold text-text-primary">$437,496</p>
+                                    <p class="text-xs text-text-secondary">30.0%</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-background rounded-lg">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 rounded-full bg-accent"></div>
+                                    <div>
+                                        <p class="text-sm font-medium text-text-primary">Ancillary Services</p>
+                                        <p class="text-xs text-text-secondary">Spa, parking, amenities</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-semibold text-text-primary">$204,165</p>
+                                    <p class="text-xs text-text-secondary">14.0%</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-background rounded-lg">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 rounded-full bg-success"></div>
+                                    <div>
+                                        <p class="text-sm font-medium text-text-primary">Events & Meetings</p>
+                                        <p class="text-xs text-text-secondary">Conference rooms</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-semibold text-text-primary">$86,659</p>
+                                    <p class="text-xs text-text-secondary">6.0%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Channel Performance Comparison -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1dd701a04-1767402806796.png"
+                                alt="Bar chart icon" class="w-6 h-6">
+                            Channel Performance Comparison
+                        </h3>
+                        <button
+                            class="text-sm text-primary hover:text-primary-700 font-medium transition-colors duration-250">
+                            View Details
+                        </button>
+                    </div>
+                    <!-- Bar Chart -->
+                    <div class="relative h-64 bg-background rounded-lg p-6" role="img"
+                        aria-label="Bar chart comparing revenue performance across different booking channels">
+                        <svg class="w-full h-full" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid meet">
+                            <!-- Grid Lines -->
+                            <line x1="0" y1="0" x2="800" y2="0" stroke="#E5E7EB" stroke-width="1" />
+                            <line x1="0" y1="50" x2="800" y2="50" stroke="#E5E7EB" stroke-width="1" />
+                            <line x1="0" y1="100" x2="800" y2="100" stroke="#E5E7EB" stroke-width="1" />
+                            <line x1="0" y1="150" x2="800" y2="150" stroke="#E5E7EB" stroke-width="1" />
+                            <line x1="0" y1="200" x2="800" y2="200" stroke="#E5E7EB" stroke-width="1" />
+
+                            <!-- Bars -->
+                            <rect x="50" y="40" width="80" height="160" fill="#1E3A5F" rx="4" />
+                            <rect x="200" y="80" width="80" height="120" fill="#4A90A4" rx="4" />
+                            <rect x="350" y="100" width="80" height="100" fill="#D4A574" rx="4" />
+                            <rect x="500" y="120" width="80" height="80" fill="#059669" rx="4" />
+                            <rect x="650" y="140" width="80" height="60" fill="#D97706" rx="4" />
+                        </svg>
+                        <!-- Y-Axis Labels -->
+                        <div
+                            class="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-text-secondary py-6">
+                            <span>$400k</span>
+                            <span>$300k</span>
+                            <span>$200k</span>
+                            <span>$100k</span>
+                            <span>$0</span>
+                        </div>
+                    </div>
+                    <!-- Channel Labels & Metrics -->
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-5 gap-4">
+                        <div class="text-center p-3 bg-background rounded-lg">
+                            <div class="w-3 h-3 bg-primary rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs text-text-secondary mb-1">Direct</p>
+                            <p class="text-sm font-semibold text-text-primary">$365,000</p>
+                            <p class="text-xs text-success">0% commission</p>
+                        </div>
+                        <div class="text-center p-3 bg-background rounded-lg">
+                            <div class="w-3 h-3 bg-secondary rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs text-text-secondary mb-1">Booking.com</p>
+                            <p class="text-sm font-semibold text-text-primary">$291,664</p>
+                            <p class="text-xs text-warning">15% commission</p>
+                        </div>
+                        <div class="text-center p-3 bg-background rounded-lg">
+                            <div class="w-3 h-3 bg-accent rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs text-text-secondary mb-1">Expedia</p>
+                            <p class="text-sm font-semibold text-text-primary">$218,748</p>
+                            <p class="text-xs text-warning">18% commission</p>
+                        </div>
+                        <div class="text-center p-3 bg-background rounded-lg">
+                            <div class="w-3 h-3 bg-success rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs text-text-secondary mb-1">Corporate</p>
+                            <p class="text-sm font-semibold text-text-primary">$145,832</p>
+                            <p class="text-xs text-success">10% discount</p>
+                        </div>
+                        <div class="text-center p-3 bg-background rounded-lg">
+                            <div class="w-3 h-3 bg-warning rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs text-text-secondary mb-1">Other OTAs</p>
+                            <p class="text-sm font-semibold text-text-primary">$87,499</p>
+                            <p class="text-xs text-warning">12-20% commission</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seasonal Trends Analysis -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1590c0767-1768238691309.png"
+                                alt="Seasonal icon" class="w-6 h-6">
+                            Seasonal Trends & Forecasting
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="p-4 bg-background rounded-lg border-l-4 border-primary">
+                            <div class="flex items-center gap-2 mb-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_18cc292e6-1765254157740.png"
+                                    alt="Winter season icon" class="w-5 h-5">
+                                <p class="text-sm font-semibold text-text-primary">Winter (Q1)</p>
+                            </div>
+                            <p class="text-2xl font-heading font-semibold text-text-primary mb-1">82.3%</p>
+                            <p class="text-xs text-text-secondary">Avg. Occupancy</p>
+                            <div class="mt-3 flex items-center gap-2 text-xs text-success">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fc9404eb-1767016302792.png"
+                                    alt="Trending up icon" class="w-4 h-4">
+                                <span>+3.2% YoY</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-background rounded-lg border-l-4 border-secondary">
+                            <div class="flex items-center gap-2 mb-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11457350f-1769434179068.png"
+                                    alt="Spring season icon" class="w-5 h-5">
+                                <p class="text-sm font-semibold text-text-primary">Spring (Q2)</p>
+                            </div>
+                            <p class="text-2xl font-heading font-semibold text-text-primary mb-1">91.5%</p>
+                            <p class="text-xs text-text-secondary">Avg. Occupancy</p>
+                            <div class="mt-3 flex items-center gap-2 text-xs text-success">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fc9404eb-1767016302792.png"
+                                    alt="Trending up icon" class="w-4 h-4">
+                                <span>+5.8% YoY</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-background rounded-lg border-l-4 border-accent">
+                            <div class="flex items-center gap-2 mb-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1e5b1f4ff-1766478853171.png"
+                                    alt="Summer season icon" class="w-5 h-5">
+                                <p class="text-sm font-semibold text-text-primary">Summer (Q3)</p>
+                            </div>
+                            <p class="text-2xl font-heading font-semibold text-text-primary mb-1">95.2%</p>
+                            <p class="text-xs text-text-secondary">Avg. Occupancy</p>
+                            <div class="mt-3 flex items-center gap-2 text-xs text-success">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fc9404eb-1767016302792.png"
+                                    alt="Trending up icon" class="w-4 h-4">
+                                <span>+7.1% YoY</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-background rounded-lg border-l-4 border-warning">
+                            <div class="flex items-center gap-2 mb-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1bb38068d-1766478848826.png"
+                                    alt="Fall season icon" class="w-5 h-5">
+                                <p class="text-sm font-semibold text-text-primary">Fall (Q4)</p>
+                            </div>
+                            <p class="text-2xl font-heading font-semibold text-text-primary mb-1">88.7%</p>
+                            <p class="text-xs text-text-secondary">Avg. Occupancy</p>
+                            <div class="mt-3 flex items-center gap-2 text-xs text-success">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fc9404eb-1767016302792.png"
+                                    alt="Trending up icon" class="w-4 h-4">
+                                <span>+4.5% YoY</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
+                        <div class="flex items-start gap-3">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1bc7da9e6-1766063696505.png"
+                                alt="Insight icon" class="w-6 h-6 mt-1">
+                            <div>
+                                <h4 class="text-sm font-semibold text-text-primary mb-1">Seasonal Insight</h4>
+                                <p class="text-sm text-text-secondary">Summer months show highest demand with 95.2%
+                                    occupancy. Consider implementing dynamic pricing strategies to maximize revenue
+                                    during peak season while maintaining competitive rates during shoulder periods.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: Sidebar Widgets -->
+            <div class="space-y-6">
+                <!-- Dynamic Pricing Recommendations -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-heading font-semibold text-text-primary flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16c429f3d-1768259462704.png"
+                                alt="Pricing icon" class="w-5 h-5">
+                            Pricing Recommendations
+                        </h3>
+                        <span class="badge badge-warning text-xs">3 Actions</span>
+                    </div>
+                    <div class="space-y-3">
+                        <!-- Recommendation 1 -->
+                        <div class="p-3 bg-success/5 rounded-lg border border-success/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="badge badge-success text-xs">Increase Rate</span>
+                                <span class="text-xs text-text-secondary">High Demand</span>
+                            </div>
+                            <p class="text-sm font-medium text-text-primary mb-1">Weekend Rates (Feb 7-9)</p>
+                            <p class="text-xs text-text-secondary mb-3">Current: $185 → Suggested: $215</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-success font-medium">+$30 (+16.2%)</span>
+                                <button
+                                    class="text-xs text-primary hover:text-primary-700 font-medium transition-colors duration-250">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Recommendation 2 -->
+                        <div class="p-3 bg-warning/5 rounded-lg border border-warning/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="badge badge-warning text-xs">Adjust Rate</span>
+                                <span class="text-xs text-text-secondary">Moderate Demand</span>
+                            </div>
+                            <p class="text-sm font-medium text-text-primary mb-1">Midweek Rates (Feb 10-13)</p>
+                            <p class="text-xs text-text-secondary mb-3">Current: $185 → Suggested: $175</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-warning font-medium">-$10 (-5.4%)</span>
+                                <button
+                                    class="text-xs text-primary hover:text-primary-700 font-medium transition-colors duration-250">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Recommendation 3 -->
+                        <div class="p-3 bg-primary/5 rounded-lg border border-primary/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="badge text-xs bg-primary/10 text-primary border border-primary/20">Competitive</span>
+                                <span class="text-xs text-text-secondary">Rate Parity</span>
+                            </div>
+                            <p class="text-sm font-medium text-text-primary mb-1">OTA Rate Alignment</p>
+                            <p class="text-xs text-text-secondary mb-3">Booking.com showing $5 lower rate</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-text-secondary font-medium">Review Needed</span>
+                                <button
+                                    class="text-xs text-primary hover:text-primary-700 font-medium transition-colors duration-250">
+                                    Review
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-4 text-sm text-primary hover:text-primary-700 font-medium transition-colors duration-250">
+                        View All Recommendations
+                    </button>
+                </section>
+
+                <!-- Guest Behavior Insights -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-heading font-semibold text-text-primary flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_192cc0679-1769962062632.png"
+                                alt="Guest insights icon" class="w-5 h-5">
+                            Guest Insights
+                        </h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Avg. Length of Stay</span>
+                            <span class="text-lg font-semibold text-text-primary">3.2 nights</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Avg. Booking Window</span>
+                            <span class="text-lg font-semibold text-text-primary">18 days</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Repeat Guest Rate</span>
+                            <span class="text-lg font-semibold text-success">42.5%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Cancellation Rate</span>
+                            <span class="text-lg font-semibold text-warning">8.3%</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-border">
+                        <h4 class="text-sm font-semibold text-text-primary mb-3">Top Guest Segments</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                    <span class="text-sm text-text-secondary">Business Travelers</span>
+                                </div>
+                                <span class="text-sm font-medium text-text-primary">38%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                    <span class="text-sm text-text-secondary">Leisure Couples</span>
+                                </div>
+                                <span class="text-sm font-medium text-text-primary">32%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                    <span class="text-sm text-text-secondary">Families</span>
+                                </div>
+                                <span class="text-sm font-medium text-text-primary">22%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-success rounded-full"></div>
+                                    <span class="text-sm text-text-secondary">Groups</span>
+                                </div>
+                                <span class="text-sm font-medium text-text-primary">8%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Performance Alerts -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-heading font-semibold text-text-primary flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13e98d9b2-1767786352055.png"
+                                alt="Alert icon" class="w-5 h-5">
+                            Performance Alerts
+                        </h3>
+                        <span class="badge badge-error text-xs">2 Critical</span>
+                    </div>
+                    <div class="space-y-3">
+                        <!-- Alert 1 -->
+                        <div class="p-3 bg-error/5 rounded-lg border border-error/30">
+                            <div class="flex items-start gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1efc01800-1768227656886.png"
+                                    alt="Critical alert icon" class="w-5 h-5 mt-0.5">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-text-primary mb-1">Low Occupancy Alert</p>
+                                    <p class="text-xs text-text-secondary mb-2">Next week showing only 62% occupancy -
+                                        15% below target</p>
+                                    <button
+                                        class="text-xs text-error hover:text-error-700 font-medium transition-colors duration-250">
+                                        View Action Plan →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alert 2 -->
+                        <div class="p-3 bg-error/5 rounded-lg border border-error/30">
+                            <div class="flex items-start gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1efc01800-1768227656886.png"
+                                    alt="Critical alert icon" class="w-5 h-5 mt-0.5">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-text-primary mb-1">Rate Parity Issue</p>
+                                    <p class="text-xs text-text-secondary mb-2">Expedia showing rates $12 lower than
+                                        direct booking</p>
+                                    <button
+                                        class="text-xs text-error hover:text-error-700 font-medium transition-colors duration-250">
+                                        Investigate Now →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alert 3 -->
+                        <div class="p-3 bg-warning/5 rounded-lg border border-warning/30">
+                            <div class="flex items-start gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_137acf004-1769962063242.png"
+                                    alt="Warning alert icon" class="w-5 h-5 mt-0.5">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-text-primary mb-1">F&B Revenue Decline</p>
+                                    <p class="text-xs text-text-secondary mb-2">Restaurant revenue down 8% this week vs.
+                                        last week</p>
+                                    <button
+                                        class="text-xs text-warning hover:text-warning-700 font-medium transition-colors duration-250">
+                                        Review Details →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Competitive Analysis -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-heading font-semibold text-text-primary flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1005bcf0b-1768679494175.png"
+                                alt="Competitive analysis icon" class="w-5 h-5">
+                            Market Position
+                        </h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-background rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Your Property</span>
+                                <span class="badge badge-success text-xs">Leader</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-text-secondary mb-2">
+                                <span>ADR: $185.71</span>
+                                <span>RevPAR: $162.50</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill bg-success" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-background rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Competitor A</span>
+                                <span class="text-xs text-text-secondary">Similar Property</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-text-secondary mb-2">
+                                <span>ADR: $178.50</span>
+                                <span>RevPAR: $151.73</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill bg-secondary" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-background rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-text-primary">Competitor B</span>
+                                <span class="text-xs text-text-secondary">Similar Property</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-text-secondary mb-2">
+                                <span>ADR: $172.30</span>
+                                <span>RevPAR: $144.42</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill bg-accent" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-success/5 rounded-lg border border-success/20">
+                        <div class="flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13ecc7609-1767470270659.png"
+                                alt="Trophy icon" class="w-5 h-5">
+                            <p class="text-xs text-success font-medium">You're outperforming the market by 7.1%</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Export Options -->
+                <section class="card">
+                    <h3 class="text-lg font-heading font-semibold text-text-primary mb-4">Export Reports</h3>
+                    <div class="space-y-3">
+                        <button
+                            class="w-full flex items-center justify-between p-3 bg-background rounded-lg hover:bg-primary/5 transition-all duration-250">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1656b4348-1766518614925.png"
+                                    alt="PDF export icon" class="w-6 h-6">
+                                <span class="text-sm font-medium text-text-primary">Executive Summary (PDF)</span>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_152f8b5f4-1769455359717.png"
+                                alt="Download icon" class="w-5 h-5">
+                        </button>
+                        <button
+                            class="w-full flex items-center justify-between p-3 bg-background rounded-lg hover:bg-primary/5 transition-all duration-250">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ceec1cc0-1769962062590.png"
+                                    alt="Excel export icon" class="w-6 h-6">
+                                <span class="text-sm font-medium text-text-primary">Detailed Data (Excel)</span>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_152f8b5f4-1769455359717.png"
+                                alt="Download icon" class="w-5 h-5">
+                        </button>
+                        <button
+                            class="w-full flex items-center justify-between p-3 bg-background rounded-lg hover:bg-primary/5 transition-all duration-250">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16fa08be0-1768587554848.png"
+                                    alt="Chart export icon" class="w-6 h-6">
+                                <span class="text-sm font-medium text-text-primary">Visual Report (PDF)</span>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_152f8b5f4-1769455359717.png"
+                                alt="Download icon" class="w-5 h-5">
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-[1920px] mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-text-secondary">© 2026 HotelMaster. All Rights Reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="javascript:void(0)"
+                        class="text-sm text-text-secondary hover:text-primary transition-colors duration-250">Help
+                        Center</a>
+                    <a href="javascript:void(0)"
+                        class="text-sm text-text-secondary hover:text-primary transition-colors duration-250">Privacy
+                        Policy</a>
+                    <a href="javascript:void(0)"
+                        class="text-sm text-text-secondary hover:text-primary transition-colors duration-250">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+
+</html>

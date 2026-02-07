@@ -1,0 +1,335 @@
+/*Additional styles for specific views*/
+
+.calendar-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-bottom: 1rem;
+}
+
+.calendar-day {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem;
+    background: var(--light-color);
+}
+
+.calendar-date {
+    text-align: center;
+    padding: 0.75rem;
+    border: 1px solid var(--light-color);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.calendar-date:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.calendar-date.available {
+    background: var(--success-color);
+    color: white;
+}
+
+.calendar-date.booked {
+    background: var(--danger-color);
+    color: white;
+}
+
+/* Guest Profile Cards */
+.guest-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.guest-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.guest-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.guest-info h4 {
+    margin: 0;
+    color: var(--dark-color);
+}
+
+.guest-info p {
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+.guest-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Billing Receipt */
+.receipt-container {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 1rem;
+}
+
+.receipt-items {
+    margin-bottom: 1rem;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--light-color);
+}
+
+.receipt-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--dark-color);
+}
+
+/* Housekeeping Task Cards */
+.task-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.task-card.high-priority {
+    border-left-color: var(--danger-color);
+}
+
+.task-card.medium-priority {
+    border-left-color: var(--warning-color);
+}
+
+.task-card.low-priority {
+    border-left-color: var(--success-color);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.task-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status-completed {
+    background: var(--success-color);
+    color: white;
+}
+
+.status-in-progress {
+    background: var(--warning-color);
+    color: white;
+}
+
+.status-pending {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Report Charts */
+.chart-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* Progress Bars */
+.progress-custom {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--light-color);
+}
+
+.progress-bar-custom {
+    border-radius: 4px;
+}
+
+/* Form Sections */
+.form-section {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.form-section h5 {
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    border-bottom: 1px solid var(--light-color);
+    padding-bottom: 0.75rem;
+}
+
+/* Table Customizations */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th {
+    background: var(--light-color);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Button Groups */
+.btn-group-vertical .btn {
+    border-radius: 0 !important;
+}
+
+.btn-group-vertical .btn:first-child {
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+}
+
+.btn-group-vertical .btn:last-child {
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+/* Alerts */
+.alert-custom {
+    border-radius: 10px;
+    border: none;
+    padding: 1rem 1.25rem;
+}
+
+/* Utilities */
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Animations */
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .sidebar,
+    .header,
+    .btn {
+        display: none !important;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

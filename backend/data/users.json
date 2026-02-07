@@ -1,0 +1,42 @@
+[
+    {
+        "id": "u1",
+        "username": "admin",
+        "password": "admin123",
+        "role": "admin",
+        "email": "admin@hotelsys.com",
+        "firstName": "Admin",
+        "lastName": "User",
+        "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "u2",
+        "username": "frontdesk",
+        "password": "desk123",
+        "role": "front_desk",
+        "email": "frontdesk@hotelsys.com",
+        "firstName": "Front",
+        "lastName": "Desk",
+        "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "u3",
+        "username": "housekeeping",
+        "password": "house123",
+        "role": "housekeeping",
+        "email": "housekeeping@hotelsys.com",
+        "firstName": "House",
+        "lastName": "Keeping",
+        "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "u4",
+        "username": "manager",
+        "password": "manager123",
+        "role": "manager",
+        "email": "manager@hotelsys.com",
+        "firstName": "Manager",
+        "lastName": "User",
+        "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+]
