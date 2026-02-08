@@ -33,14 +33,14 @@ const login = async (req, res) => {
 
         sessions.set(sessionId, sessionData);
 
-        sendSuccess(res, {
+        sendSuccess(res, 'Login successful', {
             token: sessionId,
             user: {
                 id: user.id,
                 username: user.username,
                 role: user.role
             }
-        }, 'Login successful');
+        });
     } catch (error) {
         console.error('Login error:', error);
         sendError(res, 500, 'Login failed', error);

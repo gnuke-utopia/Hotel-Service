@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 class DataStore {
     constructor() {
-        this.dataDir = path.join(__dirname, '../../data');
+        this.dataDir = path.join(__dirname, '../data');
         this.ensureDataDir();
     }
 
@@ -33,6 +33,7 @@ class DataStore {
             const data = await fs.readFile(filePath, 'utf8');
             return JSON.parse(data);
         } catch (error) {
+            console.error(`Error reading ${collection} from ${this.getFilePath(collection)}:`, error.message);
             console.log(`Creating new ${collection} file`);
             return [];
         }

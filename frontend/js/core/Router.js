@@ -30,16 +30,21 @@ export class Router {
 
             // Render the view
             const html = await view.render();
-            this.container.innerHTML = html;
 
-            // Call post-render if it exists
-            if (view.postRender) {
-                view.postRender();
+            if (this.container) {
+                this.container.innerHTML = html;
+
+                // Call post-render if it exists
+                if (view.postRender) {
+                    view.postRender();
+                }
+
+                // Add fade-in animation
+                this.container.classList.add('fade-in');
+                setTimeout(() => {
+                    if (this.container) this.container.classList.remove('fade-in');
+                }, 500);
             }
-
-            // Add fade-in animation
-            this.container.classList.add('fade-in');
-            setTimeout(() => this.container.classList.remove('fade-in'), 500);
 
         } catch (error) {
             console.error(`Error loading view "${viewName}":`, error);

@@ -1,0 +1,21 @@
+{
+  "name": "hotelsys-backend",
+  "version": "1.0.0",
+  "description": "Hotel Management System Backend API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "hotel",
+    "management",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.6.5"
+  }
+}

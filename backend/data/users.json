@@ -1,6 +1,6 @@
 [
     {
-        "id": "u1",
+        "id": "1",
         "username": "admin",
         "password": "admin123",
         "role": "admin",
@@ -10,7 +10,7 @@
         "createdAt": "2026-01-01T00:00:00.000Z"
     },
     {
-        "id": "u2",
+        "id": "2",
         "username": "frontdesk",
         "password": "desk123",
         "role": "front_desk",
@@ -20,7 +20,7 @@
         "createdAt": "2026-01-01T00:00:00.000Z"
     },
     {
-        "id": "u3",
+        "id": "3",
         "username": "housekeeping",
         "password": "house123",
         "role": "housekeeping",
@@ -30,7 +30,7 @@
         "createdAt": "2026-01-01T00:00:00.000Z"
     },
     {
-        "id": "u4",
+        "id": "4",
         "username": "manager",
         "password": "manager123",
         "role": "manager",

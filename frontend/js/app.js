@@ -26,10 +26,18 @@ class HotelApp {
 
     showLoginModal() {
         const modalElement = document.getElementById('loginModal');
+        if (!modalElement) {
+            console.error('Login modal element not found in the DOM.');
+            return;
+        }
         const loginModal = new bootstrap.Modal(modalElement);
         loginModal.show();
 
         const loginForm = document.getElementById('loginForm');
+        if (!loginForm) {
+            console.error('Login form element not found in the DOM.');
+            return;
+        }
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -75,9 +83,15 @@ class HotelApp {
     }
 
     updateUserInfo() {
-        document.getElementById('userName').textContent = this.currentUser.username;
-        document.getElementById('userRole').textContent = this.getRoleDisplay(this.currentUser.role);
-        document.getElementById('userInitials').textContent = this.currentUser.username.charAt(0).toUpperCase();
+        if (!this.currentUser) return;
+
+        const userNameEl = document.getElementById('userName');
+        const userRoleEl = document.getElementById('userRole');
+        const userInitialsEl = document.getElementById('userInitials');
+
+        if (userNameEl) userNameEl.textContent = this.currentUser.username;
+        if (userRoleEl) userRoleEl.textContent = this.getRoleDisplay(this.currentUser.role);
+        if (userInitialsEl) userInitialsEl.textContent = this.currentUser.username.charAt(0).toUpperCase();
     }
 
     getRoleDisplay(role) {
@@ -108,8 +122,11 @@ class HotelApp {
                 console.log('Navigating to:', viewName);
 
                 // Update page title
-                const titleText = link.querySelector('span').textContent;
-                document.getElementById('pageTitle').textContent = titleText;
+                const pageTitleEl = document.getElementById('pageTitle');
+                if (pageTitleEl) {
+                    const span = link.querySelector('span');
+                    if (span) pageTitleEl.textContent = span.textContent;
+                }
 
                 // Navigate to view
                 this.router.navigateTo(viewName);

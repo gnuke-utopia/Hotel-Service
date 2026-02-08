@@ -1,5 +1,3 @@
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // backend/server.js
 import http from 'http';
@@ -7,6 +5,9 @@ import url from 'url';
 import path from 'path';
 import fs from 'fs';
 import { promisify } from 'util';
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Import controllers : Fix cjs file extension error
 import * as authController from './controllers/AuthController.js';
@@ -147,11 +148,24 @@ const server = http.createServer(async (req, res) => {
                 req.on('end', async () => {
                     try {
                         // Only parse JSON if there's a body
-                        if (body) {
-                            req.body = JSON.parse(body);
-                        } else {
-                            req.body = {}; // Ensure req.body exists even if empty
+                        // if (body) { //error stopping the login from working
+                        //     req.body = JSON.parse(body);
+                        // } else {
+                        //     req.body = {}; // Ensure req.body exists even if empty
+                        // }
+                        let parsedBody = {};
+
+                        if (body && body.trim()) {
+                            try {
+                                parsedBody = JSON.parse(body);
+                            } catch (err) {
+                                console.error('Invalid JSON received:', body);
+                                return sendError(res, 400, 'Invalid JSON in request body');
+                            }
                         }
+
+                        req.body = parsedBody;
+
 
                         // Extend the original res object with Express-like helpers
                         res.json = (data) => {
@@ -248,6 +262,7 @@ server.listen(PORT, () => {
     console.log(`HotelSys Pro server running on http://localhost:${PORT}`);
     console.log('Environment:', process.env.NODE_ENV || 'development');
     console.log('Serving static files from:', STATIC_DIR);
+    console.log('Current Working Directory:', process.cwd());
     console.log('Press Ctrl+C to stop the server');
 });
 

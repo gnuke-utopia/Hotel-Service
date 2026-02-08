@@ -50,9 +50,20 @@ export class AuthService {
     }
 
     getCurrentUser() {
-        const userStr = sessionStorage.getItem(this.storageKey);
-        return userStr ? JSON.parse(userStr) : null;
+        const userStr = localStorage.getItem('user');
+
+        if (!userStr || userStr === 'undefined') {
+            return null;
+        }
+
+        try {
+            return JSON.parse(userStr);
+        } catch (err) {
+            console.error('Failed to parse stored user:', userStr);
+            return null;
+        }
     }
+
 
     isAuthenticated() {
         const user = this.getCurrentUser();
