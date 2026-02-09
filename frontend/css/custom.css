@@ -247,6 +247,56 @@ body {
     font-weight: 500;
 }
 
+.dashboard-container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-container-flex > * {
+    flex: 1;
+    min-width: 280px;
+}
+
+/*Grids for the dashboard error*/
+/*Ensure grid layout works properly */
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
 /* Buttons */
 .btn {
     padding: 0.625rem 1.25rem;
@@ -409,6 +459,23 @@ body {
     .header-left h1 {
         font-size: 1.2rem;
     }
+    @media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+    @media (min-width: 1024px) {
+        .lg\:grid-cols-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        }
+    }
+    
+
+/* Responsive breakpoints */
 
     .stat-card,
     .quick-action-card {

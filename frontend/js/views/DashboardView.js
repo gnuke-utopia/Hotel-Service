@@ -54,7 +54,8 @@ export default {
                 </div>
 
                 <!-- Key Metrics Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="grid grid-cols-5 md:grid-cols-2 lg:grid-cols-6 gap-2 mb-4">
+
                     <!-- Occupancy Rate -->
                     <div class="card hover:shadow-lg p-6 bg-white rounded-xl shadow-sm">
                         <div class="flex items-start justify-between mb-4">
@@ -112,8 +113,9 @@ export default {
 
                 <!-- Main Dashboard Grid -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
                     <!-- Right Column: Quick Stats -->
-                     <section class="card p-6 bg-white rounded-xl shadow-sm h-full">
+                     <section class="card p-4 bg-white rounded-xl shadow-sm h-full">
                         <h3 class="text-lg font-bold text-gray-900 mb-6">Quick Stats</h3>
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
@@ -142,7 +144,7 @@ export default {
 
                     <!-- Left Column: Quick Actions (Expanded) -->
                     <div class="lg:col-span-2">
-                        <div class="card p-6 bg-white rounded-xl shadow-sm">
+                        <div class="card p-4 bg-white rounded-xl shadow-sm">
                             <div class="card-header bg-white border-0 p-0 mb-4">
                                 <h5 class="mb-0 text-lg font-bold"><i class="fas fa-bolt mr-2 text-primary"></i>Quick Actions</h5>
                             </div>
