@@ -8,14 +8,14 @@ git pull origin main
 git status
 ```
 
-== Node.js commands
+## Node.js commands
 ```bash
 npm run backend
 #OR
 node backend/server.js
 # Access location: https://localhost:3000
 ```
-== Docker commands
+## Docker commands
 
 ```bash
 #Build and start
